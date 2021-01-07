@@ -1,0 +1,8 @@
+.detail-wrap {width: 100%; height: auto; }
+.top-wrap {width: 100%; height: 1.2rem; background-color: #ffffff; display: flex; justify-content: space-between; align-items: center; font-size: 0.4rem;}
+.top-wrap .back-icon {width: 0.8rem; height: 0.8rem; margin-left: 0.2rem; background-image: url('../../../images/home/goods/back.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;}
+.top-wrap .cart-icon {width: 0.8rem; height: 0.8rem; margin-right: 0.3rem; background-image: url('../../../images/home/goods/cart.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;}
+
+
+
+/* .swiper-pagination-bullet {width: 1rem !important;} */

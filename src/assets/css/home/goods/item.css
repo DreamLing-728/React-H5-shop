@@ -1,0 +1,7 @@
+.goods-wrap {width: 100%; height: auto; margin-top: 0.2rem;}
+.goods-wrap .item-wrap {width: 100%; height: auto;  background-color: #ffffff; padding: 0.1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
+.goods-wrap .item-wrap .item-title {font-size: 0.3rem; line-height: auto; font-size: 0.1rem;}
+.goods-wrap .item-wrap .goods-item {width: 30%; height: 2rem; margin-top: 0.1rem;}
+.goods-wrap .item-wrap .goods-item .image {width: 90%; height: 80%;}
+.goods-wrap .item-wrap .goods-item .image img{width: 100%; height: 100%;}
+.goods-wrap .item-wrap .goods-item .title {height: 20%;  overflow: hidden; text-align: center; font-size: 0.25rem; white-space: nowrap; text-overflow: ellipsis;}

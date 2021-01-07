@@ -1,0 +1,27 @@
+.page {width: 100%; height: auto; margin-bottom: 2.7rem;}
+.top-wrap {width: 100%; height: 1rem; background-color: white; display: flex; justify-content: center; align-items: center;}
+.top-wrap .title {width: 88%; height: auto; font-size: 0.4rem; text-align: center;}
+
+.goods-wrap {width: 100%; height: auto; bottom: 2.7rem;}
+.item-wrap {width: 100%; height: 2rem; margin-top: 0.1rem; background-color: white; display: flex; justify-content: space-between; align-items: center;}
+.item-wrap .select-icon{ width: 0.4rem; height: 0.4rem; margin-left: 0.2rem; border: 0.03rem solid #E6E6E6; border-radius: 100%;} 
+.item-wrap .select-icon.checked{ width: 0.4rem; height: 0.4rem; margin-left: 0.2rem; border: 0.03rem solid #E6E6E6; border-radius: 100%; background-image: url('../../images/home/cart/checkmark.png'); background-size: 100%; background-repeat: 1; background-position: center;} 
+.item-wrap .img-wrap{ width: 1.5rem; height: 90%; display: flex; justify-content: space-around; align-items: center; flex-direction: column;}
+.item-wrap .img-wrap img { width: 1.2rem; height: 1.2rem; background-image: url('../../images/home/goods/goods.png'); background-size: 100%; background-position: center; background-repeat: no-repeat;}
+.item-wrap .content-wrap {width: 70%; height: 90%; display: flex; justify-content: left; align-items: center; flex-direction: column;}
+.item-wrap .content-wrap .title{ width: 100%; text-align: left; }
+.item-wrap .content-wrap .type-wrap {left: 0; width: 100%; display: flex; justify-content: left; align-items: center; flex-wrap: wrap; font-size: 0.25rem;}
+.item-wrap .content-wrap .type-wrap .type {display: flex; justify-content: left; align-items: center; font-size: 0.25rem;}
+.item-wrap .content-wrap .type-wrap .type .item {margin-right: 0.2rem; color: #7B7788;}
+.item-wrap .content-wrap .type-wrap .size {margin-left: 0.3rem;}
+.item-wrap .content-wrap .price-count {width: 100%; height: 0.8rem; display: flex; justify-content: space-between; align-items: center;}
+.item-wrap .content-wrap .price-count .count {width: 30%; height: 0.5rem; margin-right: 0.2rem; border: 0.03rem solid #808080; border-radius: 0.3rem; display: flex; justify-content: space-between; align-items: center;}
+.item-wrap .content-wrap .price-count .count .action {width: 0.5rem; height: 0.5rem; line-height: 0.5rem; text-align: center;}
+.item-wrap .content-wrap .price-count .count .num {width: 1rem; text-align: center; border-left: 0.03rem solid #616060; border-right: 0.03rem solid #616060;}
+
+.bottom-wrap {position: fixed; bottom: 1.5rem; width: 100%; height: 1.2rem; background-color: #FFFFFF; display: flex; justify-content: space-between; align-items: center;}
+.bottom-wrap .selectAll-wrap {display: flex; justify-content: space-between; align-items: center;}
+.bottom-wrap .selectAll-wrap .icon {width: 0.4rem; height: 0.4rem; margin-left: 0.2rem; margin-right: 0.2rem; border: 0.03rem solid #E6E6E6; border-radius: 100%;}
+.bottom-wrap .selectAll-wrap .icon.checked {width: 0.4rem; height: 0.4rem; margin-left: 0.2rem; margin-right: 0.2rem; border: 0.03rem solid #E6E6E6; border-radius: 100%; background-image: url('../../images/home/cart/checkmark.png'); background-size: 100%; background-repeat: 1; background-position: center;}
+.bottom-wrap .countAll-wrap {display: flex; justify-content: space-between; align-items: center;}
+.bottom-wrap .countAll-wrap .submit {width: 2rem; height: 1.2rem; margin-left: 0.3rem; line-height: 1.2rem; background-color: #F70909; font-size: 0.35rem; text-align: center; color: white;}

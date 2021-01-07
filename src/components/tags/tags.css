@@ -1,0 +1,2 @@
+.nav-wrap {display: flex; justify-content: space-around; align-items: center; height: 1rem; background-color: #FFFFFF; border-bottom: 0.03rem solid #EEEEEE;}
+.nav-wrap .item.active {border-bottom: 0.06rem solid #e69a0f;}

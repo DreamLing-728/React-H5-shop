@@ -1,0 +1,29 @@
+.top-wrap {display: flex; justify-content: space-between; align-items: center; width: 90%; height: 2rem; background-color: #FFFFFF; margin: 0.2rem auto; border-radius: 0.2rem;}
+.top-wrap .loca-icon {width: 0.6rem; height: 0.6rem; background-image: url('../../../images/home/order/loca.png'); background-size: 100%; background-position: center;}
+.top-wrap .content {width: 90%; height: 70%; }
+.top-wrap .content .user-wrap {display: flex; justify-content: left; align-items: center; margin-top: 0.2rem;}
+.top-wrap .content .user-wrap .username {margin-left: 0.2rem;}
+.top-wrap .content .user-wrap .tel {margin-left: 0.2rem;}
+.top-wrap .content .location {margin-top: 0.2rem; margin-left: 0.2rem; font-size: 0.25rem;}
+.top-wrap .detail-icon {width: 0.5rem; height: 0.5rem; background-image: url('../../../images/common/right_arrow.png'); background-size: 100%;}
+
+.items-wrap {margin-top: 0.2rem; border-radius: 0.3rem;}
+.item-wrap {display: flex; justify-content: space-between; align-items: center; width: 90%; margin: 0 auto; background-color: #FFFFFF; border-bottom: 0.03rem solid #EEEEEE; height: 2.5rem; border-radius: 0.2rem;}
+.item-wrap img {width: 1rem; height: 1rem; background-color: #BBBBBB;}
+.item-wrap .content-wrap {display: flex; justify-content: space-around; align-items: left; flex-direction: column; width: 80%; height: 90%;}
+.item-wrap .content-wrap .title {font-size: 0.25    rem;}
+.item-wrap .content-wrap .types-wrap {display: flex; justify-content: left; align-items: center; flex-wrap: wrap; font-size: 0.25rem;}
+.item-wrap .content-wrap .type-wrap {font-size: 0.2rem; color: #4d4a4a; display: flex; justify-content: left; align-items: center; margin-right: 0.2rem;}
+.item-wrap .content-wrap .count {font-size: 0.2rem; color: #4d4a4a}
+.item-wrap .content-wrap .price {font-size: 0.3rem; color: #cc1e1e;}
+
+.total-wrap {width: 90%; margin: 0 auto; margin-bottom: 1.2rem; background-color: #FFFFFF; display: flex; justify-content: space-between; flex-direction: column;}
+.total-wrap .total {display: flex; justify-content: space-between; align-items: center; margin: 0.15rem 0.1rem;}
+
+.bottom-wrap {width: 100%; height: 1.2rem; background-color: #FFFFFF; display: flex; justify-content: flex-end; align-items: center; position: fixed; bottom: 0;}
+.bottom-wrap .title {width: auto; margin-right: 0.2rem; text-align: center;}
+.bottom-wrap .price-pay {width: auto; margin-right: 0.2rem;}
+.bottom-wrap .submit {width: 2rem; height: 100%; margin-right: 0; background-color: #d31b1b; color: #FFFFFF; line-height: 1.2rem; text-align: center;}
+
+
+

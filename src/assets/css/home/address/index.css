@@ -1,0 +1,14 @@
+.page {width: 100%; height: 100vh; background-color: #EEEEEE;}
+.top-wrap {display: flex; justify-content: space-between; align-items: center; width: 100%; height: 1rem; background-color: #FFFFFF;}
+.top-wrap .title {margin-left: 0.1rem;}
+.top-wrap .add {margin-right: 0.1rem;}
+
+.item-wrap {width: 90%; height: auto; margin: 0.1rem auto; background-color: #FFFFFF; border-radius: 0.3rem;}
+.item-wrap .name-cell {display: flex; justify-content: left; align-items: center;}
+.item-wrap .name-cell .name {margin: 0.2rem;}
+.item-wrap .name-cell .cell {margin: 0.2rem; font-size: 0.25rem; color: #5c5a5a;}
+.item-wrap .name-cell .isdefault { width: 1rem; height: 0.5rem; line-height: 0.5rem; border-radius: 0.3rem; background-color: #eb8c3f; font-size: 0.3rem; text-align: center; color: #FFFFFF;}
+.item-wrap .address-edit {display: flex; justify-content: left; align-items: center; margin: 0.2rem 0.2rem 0.2rem 0.2rem;}
+.item-wrap .address-edit .address {width: 85%;}
+.item-wrap .address-edit .edit-wrap {width: 15%; color: #5c5a5a;}
+.item-wrap .address-edit .edit-wrap .delete {margin-top: 0.2rem}

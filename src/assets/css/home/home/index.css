@@ -1,13 +1,13 @@
-.bottom-nav{width:100%;height:2.5rem;background:#FFFFFF;position: fixed;z-index:10;left:0px;bottom:0px;box-shadow: 0 0 10px rgba(239, 239, 239, 1);-webkit-box-shadow: 0 0 10px rgba(239, 239, 239, 1);display: flex;display:-webkit-flex;justify-content: space-between;-webkit-justify-content: space-between;align-items: center;-webkit-align-items: center;}
-.bottom-nav ul{width:1.5rem;height:2rem;}
-.bottom-nav ul:nth-child(1){margin-left:10%;}
-.bottom-nav ul:nth-child(3){margin-right:10%;}
-.bottom-nav ul li{width:1.4rem;height:1.4rem;margin:0 auto;}
-.bottom-nav ul li.home{background-image:url("../../../images/common/home1.png");background-size:100%;background-repeat: no-repeat;background-position: center;}
-.bottom-nav ul li.home.active{background-image:url("../../../images/common/home2.png");background-size:100%;background-repeat: no-repeat;background-position: center;}
-.bottom-nav ul li.text{font-size:0.6rem;text-align:center;}
-.bottom-nav ul li.text.active{color:#EB1625}
-.bottom-nav ul li.cart{background-image:url("../../../images/common/cart1.png");background-size:100%;background-repeat: no-repeat;background-position: center;}
-.bottom-nav ul li.cart.active{background-image:url("../../../images/common/cart2.png");background-size:100%;background-repeat: no-repeat;background-position: center;}
-.bottom-nav ul li.my{background-image:url("../../../images/common/my1.png");background-size:100%;background-repeat: no-repeat;background-position: center;}
-.bottom-nav ul li.my.active{background-image:url("../../../images/common/my2.png");background-size:100%;background-repeat: no-repeat;background-position: center;}
+.buttom-nav {position: fixed; z-index: 10; bottom: 0px; display: flex; justify-content: space-around; align-items: center; width: 100%; height: 1.5rem; background-color: #FFFFFF; }
+
+.buttom-nav ul{width: 0.8rem; height: 0.9rem;}
+
+.buttom-nav ul li.home{margin: 0 auto; width: 0.6rem; height: 0.6rem; background-image: url('../../../../assets/images/common/home1.png');background-size: 100%; background-repeat: no-repeat; background-position: center;}
+.buttom-nav ul li.home.active{margin: 0 auto; width: 0.6rem; height: 0.6rem;; background-image: url('../../../../assets/images/common/home2.png');background-size: 100%; background-repeat: no-repeat; background-position: center;}
+.buttom-nav ul li.cart{margin: 0 auto; width: 0.6rem; height: 0.6rem; background-image: url('../../../../assets/images/common/cart1.png');background-size: 100%; background-repeat: no-repeat; background-position: center;}
+.buttom-nav ul li.cart.active{margin: 0 auto; width: 0.6rem; height: 0.6rem; background-image: url('../../../../assets/images/common/cart2.png');background-size: 100%; background-repeat: no-repeat; background-position: center;}
+.buttom-nav ul li.my{margin: 0 auto; width: 0.6rem; height: 0.6rem; background-image: url('../../../../assets/images/common/my1.png');background-size: 100%; background-repeat: no-repeat; background-position: center;}
+.buttom-nav ul li.my.active{margin: 0 auto; width: 0.6rem; height: 0.6rem; background-image: url('../../../../assets/images/common/my2.png');background-size: 100%; background-repeat: no-repeat; background-position: center;}
+
+.buttom-nav ul li.text{text-align: center; font-size: 0.25rem; width: auto;}
+.buttom-nav ul li.text.active{text-align: center; font-size: 0.25rem; color: #EB1625;}

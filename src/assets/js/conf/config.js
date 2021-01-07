@@ -1,8 +1,13 @@
-let prodUrl="http://vueshop.glbuys.com";//生成环境
-let devUrl="/proxy";//开发者环境
-let baseUrl=process.env.NODE_ENV==='development'?devUrl:prodUrl;
+// 网易云课堂后端
+let prodUrl = "http://vueshop.glbuys.com";
+let devUrl = "http://vueshop.glbuys.com";
+
+// mock模拟的后端
+// let prodUrl = "http://localhost:3000";
+// let devUrl = "http://localhost:3000";
+let baseUrl = process.env.NODE_ENV === 'development' ? devUrl : prodUrl;
 export default {
-    baseUrl:baseUrl,
-    path:"/",
-    token:"1ec949a15fb709370f"
+    baseUrl: baseUrl,
+    path: "/",
+    token: "1ec949a15fb709370f"
 }

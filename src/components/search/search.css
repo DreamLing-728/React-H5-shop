@@ -1,0 +1,16 @@
+.page{position: absolute; top: 0%; z-index: 99; width: 100%; height: 100%; background-color: #ffffff;}
+.search-header {width: 100%; height: 1rem; display: flex; justify-content: space-around; align-items: center;}
+.search-header .close {width: 0.5rem; height: 0.5rem; background-image: url('../../assets/images/common/search_x.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;}
+.search-header .search-wrap {width: 80%; height: 0.6rem; border: 0.03rem solid #E7E7E4; border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;}
+.search-header .search-wrap .search-input {width: 80%; height: 0.6rem; line-height: 0.6rem; font-size: 0.3rem; margin-left: 0.2rem;}
+.search-header .search-wrap .search-icon {margin-right: 0.2rem; width: 0.6rem; height: 0.6rem; background-image: url('../../assets/images/common/search_icon.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;}
+
+.search-main {margin-top: 0.3rem; width: 100%; height: auto;}
+.search-main .search-title-wrap {width: 100%; height: 0.8rem; display: flex; justify-content: space-between; align-items: center;}
+.search-main .search-title-wrap .search-title {margin-left: 0.5rem; font-size: 0.3rem;}
+.search-main .search-title-wrap .search-delete {margin-right: 0.5rem; width: 0.5rem; height: 0.5rem; background-image: url('../../assets/images/common/bin.png'); background-size: 100%; background-repeat: no-repeat; background-position: center;}
+.search-main .search-content-wrap {margin: 0 auto; width: 90%; height: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
+.search-main .search-content-wrap .search-content {margin-top: 0.5rem; width: 27%; height: auto; border: 0.05rem solid #E7E7E4; border-radius: 0.8rem; font-size: 0.3rem; text-align: center;overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+
+

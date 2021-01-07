@@ -1,0 +1,10 @@
+.item { margin-top: 0.2rem; background-color: #FFFFFF; font-size: 0.28rem;}
+.item .order-num {display: flex; justify-content: space-between; align-items: center; height: 0.8rem; border-bottom: 0.03rem solid #EEEEEE; padding: 0 0.2rem;}
+.item .content {display: flex; justify-content: space-between; align-items: center; height: 1.8rem; border-bottom: 0.03rem solid #EEEEEE; padding: 0 0.2rem;}
+.item .content .img img { width: 1rem; height: 1rem; background-color: #f17b7b;}
+.item .content .title-count { position: relative; width: 80%;}
+.item .content .title-count .title {width: 100%;}
+.item .content .title-count .count { position: absolute; right: 0; }
+.pay-action {display: flex; justify-content: space-between; align-items: center; height: 0.6rem; padding: 0.1rem 0.2rem; border-bottom: 0.03rem solid #f8b051; }
+.pay-action .action{ padding: 0.1rem; border: 0.03rem solid #e93838; border-radius: 0.2rem;}
+.bottom {font-size: 0.2rem; text-align: center; padding: 0.2rem; color: #948a8a;}
