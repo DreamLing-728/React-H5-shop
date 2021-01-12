@@ -94,7 +94,7 @@ export default class GoodsComponent extends React.Component {
                     <div className={Css['back-icon']} onClick={this.backPage.bind(this)}>
                     </div>
                     <div className={Css['search']} >
-                        <input placeholder="搜索商品" onClick={this.changeSearchStyle.bind(this)}></input>
+                        <input className={Css['search-input']} placeholder="搜索商品" onClick={this.changeSearchStyle.bind(this)}></input>
                     </div>
                 </div>
 

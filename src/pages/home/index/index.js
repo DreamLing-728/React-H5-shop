@@ -224,7 +224,9 @@ class IndexComponent extends React.Component {
                                                         <div key={index2} className={Css['goods-level1-item0']} onClick={this.goDetail.bind(this, 'goods/details/item?gid=' + item2.gid)}>
                                                             <div className={Css['goods-title2']}>{item2.title}</div>
                                                             <div className={Css["goods-text2"]}>火爆开售</div>
-                                                            <div className={Css['goods-img2']}><img data-echo={item2.image} src={require("../../../assets/images/common/lazyImg.jpg")} alt={item2.title} /></div>
+                                                            <div className={Css['goods-img2']}>
+                                                                <img data-echo={item2.image} src={require("../../../assets/images/common/lazyImg.jpg")} alt={item2.title} />
+                                                            </div>
                                                         </div>
                                                     )
                                                 })

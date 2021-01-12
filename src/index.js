@@ -9,6 +9,7 @@ import "./assets/css/common/public.css";
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from './reducers';
+import 'core-js';
 
 let store = createStore(reducers);
 // console.log('store-index',store)
