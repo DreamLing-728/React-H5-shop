@@ -27,12 +27,13 @@ UpRefresh.prototype={
             }
             bScroll=false;
             setTimeout(function(){
-                //整个页面滚动条的高度
+                //网页可见区域高（内容撑起的高度，不定在可视区域）
                 var iScrollHeight=document.documentElement.offsetHeight || document.body.offsetHeight;
-                //滚动到当前的距离
+                //网页被卷去的高
                 var iScrollTop=document.documentElement.scrollTop || document.body.scrollTop;
-                //整个窗体的高度
+                //网页可见区域高
                 var iWinHeight=document.documentElement.clientHeight || document.body.clientHeight;
+                console.log('网页可见区域高，网页被卷去的高，整个窗体的距离', iScrollHeight, iScrollTop, iWinHeight);
                 if(iScrollHeight-(iWinHeight+iScrollTop)<=_this.iOffsetBottom){
                     if(_this.iCurPage<_this.iMaxPage) {
                         _this.iCurPage++;

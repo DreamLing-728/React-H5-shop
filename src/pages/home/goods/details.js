@@ -14,7 +14,7 @@ export default class GoodsDetail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            aGid : this.props.location.search.split('=').[1]
+            aGid : this.props.location.search.split('=')[1]
         }
     }
     componentDidMount() {

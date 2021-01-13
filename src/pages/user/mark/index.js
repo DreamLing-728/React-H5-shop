@@ -50,8 +50,8 @@ class MarkIndex extends React.Component {
                 this.maxPage=res.pageinfo.pagenum;
                 this.setState({aGoods:res.data},()=>{
                     lazyImg();
-                    this.getScrollPage();
                 });
+                this.getScrollPage();
             }
         })
     }
