@@ -6,7 +6,7 @@ import config from '../../../assets/js/conf/config';
 import actions from '../../../actions';
 import HeadComponent from '../../../components/head/head';
 import Css from '../../../assets/css/user/index/index.css';
-class  userIndex extends React.Component{
+class userIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,19 +16,20 @@ class  userIndex extends React.Component{
             head: ''
         }
     }
-    componentDidMount(){
+
+    componentDidMount() {
         this.getUserInfo()
     }
 
     // 获得用户信息
     getUserInfo() {
-        if (this.props.state.user.isLogin === true){
+        if (this.props.state.user.isLogin === true) {
             let sUrl = config.baseUrl + "/api/user/myinfo/userinfo/uid/" + this.state.uid + "?token=" + config.token;
             request(sUrl).then((res) => {
                 console.log('user-getRecord-res', res);
-                if( res.code === 200) {
-                    this.setState({ 
-                        uid: res.data.uid, 
+                if (res.code === 200) {
+                    this.setState({
+                        uid: res.data.uid,
                         nickname: res.data.nickname,
                         points: res.data.points,
                         head: res.data.head
@@ -36,19 +37,20 @@ class  userIndex extends React.Component{
                 }
             })
         }
-        let params = {uid: this.state.uid}
-        
+        let params = { uid: this.state.uid }
+
     }
 
     // 点击退出登录
-    outLogin() {
+    outLogin(url) {
         let sUrl = config.baseUrl + '/api/home/user/safeout?token=1ec949a15fb709370f';
-        request(sUrl, 'post', {uid: this.props.state.user.nickname}).then((res) => {
-            console.log('outLogin',res);
-            if(res.code === 200) {
+        request(sUrl, 'post', { uid: this.state.uid }).then((res) => {
+            // console.log('outLogin', this.props.state)
+            console.log('outLogin', res);
+            if (res.code === 200) {
                 // localStorage.removeItem['uid'];
                 this.props.dispatch(actions.user.outLogin());
-                this.props.history.goBack()
+                this.props.history.replace(config.path + url)
             }
         })
     }
@@ -58,8 +60,8 @@ class  userIndex extends React.Component{
         this.props.history.push(config.path + url)
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className={['page']}>
                 <HeadComponent title='会员中心'></HeadComponent>
                 <div className={Css['top-wrap']}>
@@ -85,7 +87,7 @@ class  userIndex extends React.Component{
                         <div className={Css['title']}>待收货</div>
                     </div>
                     <div className={Css['item']} >
-                        <div className={Css['icon'] + ' ' +Css['review']}></div>
+                        <div className={Css['icon'] + ' ' + Css['review']}></div>
                         <div className={Css['title']}>待评价</div>
                     </div>
                 </div>
@@ -108,15 +110,15 @@ class  userIndex extends React.Component{
                         <div className={Css['go']}>&gt;</div>
                     </div>
                 </div>
-                
-                <div className={Css['outLogin']} onClick={this.outLogin.bind(this)}>退出登录</div>
+
+                <div className={Css['outLogin']} onClick={this.outLogin.bind(this, 'home/index')}>退出登录</div>
             </div>
         );
     }
 }
 
 export default connect((state) => {
-    return{
+    return {
         state
     }
 })(userIndex)

@@ -174,30 +174,6 @@ class DetailsItem extends React.Component {
         }
 
 
-        // 如果购物车有相同的：修改localstorage，数量总价变化
-        // let aCartData = this.props.state.cart.aCartData;
-        // console.log('detail_item_addCart', aCartData);
-        // here:
-        // for (let i = 0; i < aCartData.length; i++) {
-        //     // 如果商品编码相同：判断规格是否相同
-        //     if (aCartData[i].gid === this.state.gid) {
-        //         console.log('是相同的商品')
-        //         for(let j = 0; j < aCartData[i].attrs.length; j++){
-        //             console.log('detail_item_addCart-aCartData[i][j]',aCartData[i].attrs[j])
-        //             for(let k = 0; k < aCartData[i].attrs[j].values.length; k++){
-        //                 while(aCartData[i].attrs[j].values[k].active) {
-        //                     // 如果颜色和尺码其中给一个相同，则直接退出最外层
-        //                     if(this.state.aColor !== aCartData[i].attrs[j].values[k].value || this.state.aSize !== aCartData[i].attrs[j].values[k].value){
-        //                         console.log('是相同的商品,属性不同，可以新增！')
-        //                         break here;
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-
-
         // 都不符合上述：新加入购物车
         console.log('detail_item_express', this.props)
 
@@ -211,6 +187,8 @@ class DetailsItem extends React.Component {
             freight: this.state.aExpress,
             attrs: this.state.attrs
         }))
+
+        Toast.info('加入购物车成功')
     }
 
     // 加入收藏

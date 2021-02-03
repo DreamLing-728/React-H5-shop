@@ -19,6 +19,8 @@
 .item-wrap .content-wrap .price-count .count .action {width: 0.5rem; height: 0.5rem; line-height: 0.5rem; text-align: center;}
 .item-wrap .content-wrap .price-count .count .num {width: 1rem; text-align: center; border-left: 0.03rem solid #616060; border-right: 0.03rem solid #616060;}
 
+.error-message{margin: 0.2rem;}
+
 .bottom-wrap {position: fixed; bottom: 1.5rem; width: 100%; height: 1.2rem; background-color: #FFFFFF; display: flex; justify-content: space-between; align-items: center;}
 .bottom-wrap .selectAll-wrap {display: flex; justify-content: space-between; align-items: center;}
 .bottom-wrap .selectAll-wrap .icon {width: 0.4rem; height: 0.4rem; margin-left: 0.2rem; margin-right: 0.2rem; border: 0.03rem solid #E6E6E6; border-radius: 100%;}

@@ -2,25 +2,26 @@
 .swiper-wrap {width: 100%; height: 6rem; background-color: #AAAAAA; position: relative;z-index:1;}
 .swiper-wrap .swiper-img {width: 100%; height: 100%;}
 
-.goods-content-wrap {width: 100%; height: 2.5rem; margin-top: 0.2rem; background-color: #FFFFFF; display: flex; justify-content: space-between; align-items: center; flex-direction: column;}
-.goods-content-wrap .title {width: 100%; height: 1rem; text-overflow: ellipsis; overflow: hidden;text-align: left; font-size: 0.4rem; }
+.goods-content-wrap {width: 100%; height: 2.5rem; margin-top: 0.2rem; padding: 0.2rem; background-color: #FFFFFF; display: flex; justify-content: space-between; align-items: center; flex-direction: column;}
+.goods-content-wrap .title {width: 100%; height: 1rem; text-overflow: ellipsis; overflow: hidden;text-align: left; font-size: 0.3rem; }
 .goods-content-wrap .price {width: 95%; font-size: 0.35rem; color: #F70938;}
 .goods-content-wrap .express-sales {width: 95%; font-size: 0.25rem; color: #808080; display: flex;justify-content: space-between; align-items: center}
 
 /* 评价 */
 .review-wrap {width: 100%; height: auto; margin-top: 0.3rem; margin-bottom: 1.5rem; background-color: white; display: flex; justify-content: left; align-items: center; flex-direction: column;}
-.review-wrap .title {width: 100%; text-align: left; margin-left: 0.2rem; font-size: 0.4rem;}
+.review-wrap .title {width: 100%; text-align: left; margin-left: 0.2rem; font-size: 0.35rem;}
 .review-wrap .item-wrap {width: 100%; height: auto; margin-top: 0.2rem;}
 .review-wrap .item-wrap .user {width: 100%; text-align: left; margin-left: 0.2rem; padding: 0.1rem; display: flex; justify-content: left; align-items: center;}
 .review-wrap .item-wrap .user .user-icon {width: 0.5rem; height: 0.5rem;}
 .review-wrap .item-wrap .user .user-icon img {width: 100%; height: 100%;}
 .review-wrap .item-wrap .user .username {width: auto; height: auto; padding: 0.1rem; margin-left: 0.2rem;}
-.review-wrap .item-wrap .time {padding: 0.1rem;}
+.review-wrap .item-wrap .review {padding: 0.2rem;}
+.review-wrap .item-wrap .time {padding: 0.2rem; font-size: 0.25rem; color: #616060;}
 
 
-.bottom-wrap {position: fixed; bottom: 0; width: 100%; height: 1.2rem; display: flex; justify-content: space-between; align-items: center;}
-.bottom-wrap .mark {width: 50%; height: 1.5rem; line-height: 1.2rem; font-size: 0.5rem; text-align: center; color: white; background-color: #F7C709;}
-.bottom-wrap .cart {width: 50%; height: 1.5rem; line-height: 1.2rem; font-size: 0.5rem; text-align: center; color: white; background-color: #EE1111;}
+.bottom-wrap {position: fixed; bottom: 0; width: 100%; height: 0.9rem; display: flex; justify-content: space-between; align-items: center; padding: 0.1rem 0; background-color: #FFFFFF;}
+.bottom-wrap .mark {width: 50%; height: 0.9rem; line-height: 0.9rem; font-size: 0.35rem; text-align: center; color: white; background-color: #F7C709; border-radius: 1rem;}
+.bottom-wrap .cart {width: 50%; height: 0.9rem; line-height: 0.9rem; font-size: 0.35rem; text-align: center; color: white; background-color: #EE1111; border-radius: 1rem;}
 
 .mask {position: fixed; z-index: 99; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3);}
 .screen {position: fixed; z-index: 100; left: 0; bottom: 0; width: 100%; height: 7rem; background-color: #FFFFFF; transition: transform 0.3s; transform: translateY(100%); display: flex; justify-content: left; align-items: center; flex-direction: column;}

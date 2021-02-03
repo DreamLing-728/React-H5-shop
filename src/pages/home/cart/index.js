@@ -10,12 +10,16 @@ class CartIndex extends React.Component {
         super(props)
         this.state = {
             count: 1,
-            bAllChecked: false
+            bAllChecked: false,
+            isLogin: false,
+            cartData: this.props.state.cart.total
         }
     }
     componentDidMount() {
         this.isAllChecked();
     }
+
+
 
     // 判断是否全选
     isAllChecked() {
@@ -29,10 +33,10 @@ class CartIndex extends React.Component {
         }
         // 如果全部勾选：一个个勾选
         if (selectCount === this.props.state.cart.aCartData.length) {
-            this.setState({ bAllChecked: true});
+            this.setState({ bAllChecked: true });
             return true;
         } else {
-            this.setState({ bAllChecked: false})
+            this.setState({ bAllChecked: false })
             return false;
         }
     }
@@ -82,67 +86,67 @@ class CartIndex extends React.Component {
 
 
     render() {
-        // console.log('cart-index', this.props)
+        console.log('cart-index', this.props.state)
         return (
             <div className={Css['page']}>
-                
+
                 <HeadComponent title="购物车 "></HeadComponent>
-                <div className={Css['goods-wrap']}>
-                    {this.props.state.cart.aCartData.length > 0 ?
-                        this.props.state.cart.aCartData.map((item, index) => (
-                            <div className={Css['item-wrap']} key={index}>
-                                {/* 左 */}
-                                <div className={item.checked ? Css['select-icon'] + ' ' + Css['checked'] : Css['select-icon']} onClick={this.checkItem.bind(this, index)}></div>
-                                {/* 中 */}
-                                <div className={Css['img-wrap']}>
-                                    <div className={Css['img']}><img src={item.img} alt={item.title}></img></div>
-                                    <div className={Css['title']} onClick={this.delItem.bind(this, index)}>删除</div>
-                                </div>
-                                {/* 右 */}
-                                <div className={Css['content-wrap']}>
-                                    <div className={Css['title']}>
-                                        {item.title}
+                {this.state.cartData ?
+                    <div className={Css['goods-wrap']}>
+                        {this.props.state.cart.aCartData.length > 0 ?
+                            this.props.state.cart.aCartData.map((item, index) => (
+                                <div className={Css['item-wrap']} key={index}>
+                                    {/* 左 */}
+                                    <div className={item.checked ? Css['select-icon'] + ' ' + Css['checked'] : Css['select-icon']} onClick={this.checkItem.bind(this, index)}></div>
+                                    {/* 中 */}
+                                    <div className={Css['img-wrap']}>
+                                        <div className={Css['img']}><img src={item.img} alt={item.title}></img></div>
+                                        <div className={Css['title']} onClick={this.delItem.bind(this, index)}>删除</div>
                                     </div>
+                                    {/* 右 */}
+                                    <div className={Css['content-wrap']}>
+                                        <div className={Css['title']}>
+                                            {item.title}
+                                        </div>
 
-                                    {/* 商品属性 */}
-                                    {item.attrs.length > 0 ?
-                                        <div className={Css['type-wrap']}>
-                                            {item.attrs.map((item1, index1) => (
-                                                <div className={Css['type']} key={index1}>
-                                                    <div className={Css['item']}>{item1.title}: </div>
-                                                    <div className={Css['item']}>
-                                                        {item1.values.map((item2, index2) => {
-                                                            if (item2.active) {
-                                                                return <div key={index2}>{item2.value}</div>
-                                                            }
-                                                        })}
+                                        {/* 商品属性 */}
+                                        {item.attrs.length > 0 ?
+                                            <div className={Css['type-wrap']}>
+                                                {item.attrs.map((item1, index1) => (
+                                                    <div className={Css['type']} key={index1}>
+                                                        <div className={Css['item']}>{item1.title}: </div>
+                                                        <div className={Css['item']}>
+                                                            {item1.values.map((item2, index2) => {
+                                                                if (item2.active) {
+                                                                    return <div key={index2}>{item2.value}</div>
+                                                                }
+                                                            })}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        : ''
-                                    }
+                                                ))}
+                                            </div>
+                                            : ''
+                                        }
 
-                                    {/* 数量控制 */}
-                                    <div className={Css['price-count']}>
-                                        <div className={Css['price']}>￥{item.price}</div>
-                                        <div className={Css['count']}>
-                                            <div className={Css['action']} onClick={this.moveCount.bind(this, index)}>-</div>
-                                            <div className={Css['num']}>{item.amount}</div>
-                                            <div className={Css['action']} onClick={this.addCount.bind(this, index)}>+</div>
+                                        {/* 数量控制 */}
+                                        <div className={Css['price-count']}>
+                                            <div className={Css['price']}>￥{item.price}</div>
+                                            <div className={Css['count']}>
+                                                <div className={Css['action']} onClick={this.moveCount.bind(this, index)}>-</div>
+                                                <div className={Css['num']}>{item.amount}</div>
+                                                <div className={Css['action']} onClick={this.addCount.bind(this, index)}>+</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        ))
-                        : ''
-                    }
-                </div>
-
-
-
-
+                            ))
+                            : ''
+                        }
+                    </div>
+                    : <div className={Css['error-message']}>购物车是空的，赶紧去加购哦~</div>
+                }
+                
                 <div className={Css['bottom-wrap']}>
                     <div className={Css['selectAll-wrap']}>
                         <div className={this.state.bAllChecked ? Css['icon'] + ' ' + Css['checked'] : Css['icon']} onClick={this.isSetAllChecked.bind(this, !this.state.bAllChecked)}></div>
@@ -154,6 +158,7 @@ class CartIndex extends React.Component {
                         <div className={Css['submit']} onClick={this.pushPage.bind(this, 'order/index')}>去结算</div>
                     </div>
                 </div>
+
             </div>
         );
     }

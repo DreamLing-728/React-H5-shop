@@ -6,11 +6,14 @@ import config from '../../../assets/js/conf/config';
 import actions from '../../../actions';
 import HeadComponent from '../../../components/head/head';
 import Css from '../../../assets/css/home/order/index.css';
+import { Toast } from 'antd-mobile';
 class orderIndex extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            cart: this.props.state.cart,
+            orderData: this.props.state.cart,
+            total: this.props.state.cart.total,
+            freight: this.props.state.cart.freight,
             uid: localStorage['uid'],
             aid: localStorage['addressId'],
             name: '',
@@ -21,6 +24,18 @@ class orderIndex extends React.Component {
     }
     componentDidMount() {
         this.getAddress();
+        this.getOrderData();
+    }
+
+    // 获取需要下单的商品
+    getOrderData() {
+        let orderDataTemp = this.props.state.cart.aCartData.filter((item) => {
+            return item.checked
+        })
+        console.log('order-index-orderDataTemp', orderDataTemp);
+        this.setState({
+            orderData: orderDataTemp
+        })
     }
 
     // 获取默认地址
@@ -43,7 +58,6 @@ class orderIndex extends React.Component {
     getAddress() {
         let sUrl = config.baseUrl + '/api/user/address/info?uid=' + this.state.uid + '&aid=' + this.state.aid + '&token=' + config.token;
         request(sUrl, 'get').then((res) => {
-            console.log('order-index-res', res)
             if (res.code === 200) {
                 let resAddress = res.data.province + '' + res.data.city + '' + res.data.area + '' + res.data.address;
                 this.setState({
@@ -57,17 +71,6 @@ class orderIndex extends React.Component {
         })
     }
 
-    // outLogin() {
-    //     let sUrl = config.baseUrl + '/api/home/user/safeout?token=1ec949a15fb709370f';
-    //     request(sUrl, 'post', { uid: this.props.state.user.nickname }).then((res) => {
-    //         // console.log('outLogin', res);
-    //         if (res.code === 200) {
-    //             // localStorage.removeItem['uid'];
-    //             this.props.dispatch(actions.user.outLogin());
-    //             this.props.history.goBack()
-    //         }
-    //     })
-    // }
 
     // 跳转选择地址页面
     pushPage(sUrl) {
@@ -76,6 +79,10 @@ class orderIndex extends React.Component {
 
     // 提交订单
     submitOrder() {
+        if(this.state.address === ''){
+            Toast.info('地址为空！');
+            return false;   
+        }
         let url = config.baseUrl + '/api/order/add?token=' + config.token;
         let pramas = {
             uid: this.state.uid,
@@ -84,7 +91,7 @@ class orderIndex extends React.Component {
             goodsData: JSON.stringify(this.state.cart.aCartData)
         }
         request(url, 'post', pramas).then((res) => {
-            console.log('home-order-index', res)
+            // console.log('home-order-index', res)
             if(res.code === 200){
                 this.pushPage('/order/end');
             }
@@ -117,8 +124,8 @@ class orderIndex extends React.Component {
                 </div>
                 <div className={Css['items-wrap']}>
                     {
-                        this.state.cart.aCartData.length > 0 ?
-                            this.state.cart.aCartData.map((item, index) => (
+                        this.state.orderData.length > 0 ?
+                            this.state.orderData.map((item, index) => (
                                 <div className={Css['item-wrap']} key={index}>
                                     <div className={Css['img']}><img src={item.img}></img></div>
                                     <div className={Css['content-wrap']}>
@@ -143,22 +150,22 @@ class orderIndex extends React.Component {
                                     </div>
                                 </div>
                             ))
-                            : ''
+                            : <div>订单为0</div>
                     }
                 </div>
                 <div className={Css['total-wrap']}>
                     <div className={Css['total']} id='goods-total'>
                         <div>商品总额</div>
-                        <div>{this.state.cart.total}</div>
+                        <div>{this.state.total}</div>
                     </div>
                     <div className={Css['total']} id='express'>
                         <div>运费</div>
-                        <div>{this.state.cart.freight}</div>
+                        <div>{this.state.freight}</div>
                     </div>
                 </div>
                 <div className={Css['bottom-wrap']}>
                     <div className={Css['title']}>实际金额：</div>
-                    <div className={Css['price-pay']}>￥{parseFloat(this.state.cart.total) + parseFloat(this.state.cart.freight)}</div>
+                    <div className={Css['price-pay']}>￥{parseFloat(this.state.total) + parseFloat(this.state.freight)}</div>
                     <div className={Css['submit']} onClick={this.submitOrder.bind(this)}>提交订单</div>
                 </div>
             </div>

@@ -122,9 +122,9 @@ class LoginIndex extends React.Component {
                     <HeadComponent title="会员登录"></HeadComponent>
                     <div className={Css['main']}>
                         <div className={Css['username-wrap']}>
-                            <input placeholder="请输入手机号" onChange={(e) => { this.setPhone(e) }}></input>
+                            <input placeholder="手机号：16677778888" onChange={(e) => { this.setPhone(e) }}></input>
                         </div>
-                        <input type={this.state.passwordType} className={Css['password']} placeholder="请输入密码" onChange={(e) => { this.setPassword(e) }}></input>
+                        <input type={this.state.passwordType} className={Css['password']} placeholder="密码：77778888" onChange={(e) => { this.setPassword(e) }}></input>
                         <button className={Css['register']} onClick={this.regUser.bind(this)}>登录</button>
                     </div>
                 </div>

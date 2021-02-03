@@ -17,7 +17,7 @@ class HomeComponent extends React.Component {
             bMyStyle: true
         }
     }
-    componentWillMount(){
+    componentWillMount() {
         this.handleNavStyle(this.props);
     }
     componentDidMount() {
@@ -35,23 +35,23 @@ class HomeComponent extends React.Component {
     pushPage(url) {
         this.props.history.push(config.path + url);
     }
-    handleNavStyle(props){
-        switch (props.location.pathname){
-            case config.path+"home/index":
+    handleNavStyle(props) {
+        switch (props.location.pathname) {
+            case config.path + "home/index":
                 this.setState({
                     bHomeStyle: true,
                     bCartStyle: false,
                     bMyStyle: false
                 });
                 break;
-            case config.path+"home/cart":
+            case config.path + "home/cart":
                 this.setState({
                     bHomeStyle: false,
                     bCartStyle: true,
                     bMyStyle: false
-                }) 
+                })
                 break;
-            case config.path+"home/my":
+            case config.path + "home/my":
                 this.setState({
                     bHomeStyle: false,
                     bCartStyle: false,
@@ -76,22 +76,30 @@ class HomeComponent extends React.Component {
                 </React.Fragment>
                 <div className={Css['buttom-nav']}>
                     <ul onClick={this.goPage.bind(this, 'home/index')}>
-                        <li className={this.state.bHomeStyle? Css['home'] + " " + Css['active'] : Css['home']}></li>
-                        <li className={this.state.bHomeStyle? Css['text'] + " " + Css['active'] : Css['text']}>首页</li>
-                    </ul>
-                    <ul onClick={this.goPage.bind(this, 'home/cart')}>
-                        <li className={this.state.bCartStyle? Css['cart'] + " " + Css['active'] : Css['cart']}></li>
-                        <li className={this.state.bCartStyle? Css['text'] + " " + Css['active'] : Css['text']}>购物车</li>
+                        <li className={this.state.bHomeStyle ? Css['home'] + " " + Css['active'] : Css['home']}></li>
+                        <li className={this.state.bHomeStyle ? Css['text'] + " " + Css['active'] : Css['text']}>首页</li>
                     </ul>
                     {this.props.state.user.isLogin ?
-                        <ul onClick={this.goPage.bind(this, 'home/my')}>
-                            <li className={this.state.bMyStyle? Css['my'] + " " + Css['active'] : Css['my']}></li>
-                            <li className={this.state.bMyStyle? Css['text'] + " " + Css['active'] : Css['text']}>我的</li>
+                        <ul onClick={this.goPage.bind(this, 'home/cart')}>
+                            <li className={this.state.bCartStyle ? Css['cart'] + " " + Css['active'] : Css['cart']}></li>
+                            <li className={this.state.bCartStyle ? Css['text'] + " " + Css['active'] : Css['text']}>购物车</li>
                         </ul>
-                    : 
+                        :
                         <ul onClick={this.pushPage.bind(this, 'login/index')}>
-                            <li className={this.state.bMyStyle? Css['my'] + " " + Css['active'] : Css['my']}></li>
-                            <li className={this.state.bMyStyle? Css['text'] + " " + Css['active'] : Css['text']}>我的</li>
+                            <li className={this.state.bCartStyle ? Css['cart'] + " " + Css['active'] : Css['cart']}></li>
+                            <li className={this.state.bCartStyle ? Css['text'] + " " + Css['active'] : Css['text']}>购物车</li>
+                        </ul>
+                    }
+
+                    {this.props.state.user.isLogin ?
+                        <ul onClick={this.goPage.bind(this, 'home/my')}>
+                            <li className={this.state.bMyStyle ? Css['my'] + " " + Css['active'] : Css['my']}></li>
+                            <li className={this.state.bMyStyle ? Css['text'] + " " + Css['active'] : Css['text']}>我的</li>
+                        </ul>
+                        :
+                        <ul onClick={this.pushPage.bind(this, 'login/index')}>
+                            <li className={this.state.bMyStyle ? Css['my'] + " " + Css['active'] : Css['my']}></li>
+                            <li className={this.state.bMyStyle ? Css['text'] + " " + Css['active'] : Css['text']}>我的</li>
                         </ul>
                     }
                 </div>

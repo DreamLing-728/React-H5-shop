@@ -13,7 +13,7 @@ class UserinfoIndex extends React.Component {
             head: '',
             headName: '',
             nickname: '',
-            gender: '',
+            gender: 1,
             
         }
         this.genderSelectValue = [
@@ -72,9 +72,11 @@ class UserinfoIndex extends React.Component {
             head: this.state.headName
         }
         request(url, 'post', pramas).then((res) => {
-            // console.log('user-userinfo-savechange', res);
+            console.log('user-userinfo-savechange', res);
             if(res.code === 200) {
                 this.props.history.goBack()
+            } else {
+                Toast.info(res.data);
             }
         })
     }
